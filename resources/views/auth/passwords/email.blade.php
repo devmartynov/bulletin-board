@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('breadcrumbs')
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('home') }}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('login') }}">Вход</a></li>
+        <li class="breadcrumb-item active">Сброс пароля</li>
+    </ul>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,11 +16,6 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf

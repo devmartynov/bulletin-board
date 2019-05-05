@@ -7,10 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js', 'build') }}" defer></script>
+    <title>Adverts</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,7 +17,7 @@
     <link href="{{ mix('css/app.css', 'build') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <header>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -72,10 +69,14 @@
                 </div>
             </div>
         </nav>
+    </header>
+    <main class="py-4">
+        @yield('breadcrumbs')
+        @include('layouts.partials.flash')
+        @yield('content')
+    </main>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <!-- Scripts -->
+    <script src="{{ mix('js/app.js', 'build') }}" defer></script>
 </body>
 </html>
