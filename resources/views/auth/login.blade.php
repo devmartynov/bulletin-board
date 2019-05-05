@@ -1,12 +1,5 @@
 @extends('layouts.app')
 
-@section('breadcrumbs')
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('home') }}">Главная</a></li>
-        <li class="breadcrumb-item active">Вход</li>
-    </ul>
-@endsection
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

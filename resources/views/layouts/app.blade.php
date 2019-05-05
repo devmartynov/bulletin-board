@@ -71,9 +71,12 @@
         </nav>
     </header>
     <main class="py-4">
-        @yield('breadcrumbs')
-        @include('layouts.partials.flash')
-        @yield('content')
+        <div class="container">
+            @section('breadcrumbs', Breadcrumbs::render())
+            @yield('breadcrumbs')
+            @include('layouts.partials.flash')
+            @yield('content')
+        </div>
     </main>
 
     <!-- Scripts -->
